@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2743b81be1ce549f3be03a0e43be2e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velo: 0.25
+  speed: 0.1
   jumpForce: 60
 --- !u!212 &223911530
 SpriteRenderer:

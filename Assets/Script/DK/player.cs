@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour {
-	public float velo;
+	public float speed;
 	public float jumpForce;
 	private Rigidbody2D rb;
 	private bool IsGrounded;
@@ -14,15 +14,21 @@ public class player : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		//move
-		//if (Input.GetAxis ("Horizontal") >= 1) {
-		//	float movehori = 1;
-		//}else if(Input.GetAxis ("Horizontal") <= 1) {
-		//	float movehori = -1;
-		//}
-		float movehori = Input.GetAxis ("Horizontal");
-		Vector2 movement = new Vector2 (movehori, 0.0f);
-		rb.velocity = rb.velocity + movement * velo;
+        //move
+        //if (Input.GetAxis ("Horizontal") >= 1) {
+        //	float movehori = 1;
+        //}else if(Input.GetAxis ("Horizontal") <= 1) {
+        //	float movehori = -1;
+        //}
+        //float movehori = Input.GetAxis ("Horizontal");
+        //Vector2 movement = new Vector2 (movehori, 0.0f);
+        //rb.velocity = rb.velocity + movement * velo;
+        float movehorizontal = Input.GetAxis("Horizontal");
+
+        Vector2 pos = transform.localPosition;
+        pos.x += movehorizontal * speed;
+        transform.localPosition = pos;
+
 
 		//jump
 		if (IsGrounded==true){
