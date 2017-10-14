@@ -5,7 +5,7 @@ using UnityEngine;
 public class barrels : MonoBehaviour {
 
 	public float speed;
-
+    private float barrelDir = 1.0f;
 	public Rigidbody2D rb2d;
 
 	// Use this for initialization
@@ -15,23 +15,44 @@ public class barrels : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        StartCoroutine(MyCoroutine());
+    }
 
-	}
 
-	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
-	void FixedUpdate()
+
+    IEnumerator MyCoroutine()
+    {
+
+        yield return new WaitForSeconds(12);
+        Destroy(gameObject);
+
+
+    }
+
+    //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
+    void FixedUpdate()
 	{
-		//Store the current horizontal input in the float moveHorizontal.
-		float moveHorizontal = 0.0f;
 
-		//Store the current vertical input in the float moveVertical.
-		float moveVertical = 1.0f;
+        Vector2 pos = transform.localPosition;
+        pos.x += speed * barrelDir;
+        transform.localPosition = pos;
 
-		//Use the two store floats to create a new Vector2 variable movement.
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+    }
 
-		//Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-		rb2d.AddForce (movement * speed);
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.transform.tag == "wallLeft")
+        {
+            barrelDir = 1.0f;
+        }
 
-	}
+        if (other.gameObject.tag == "wallRight")
+        {
+            barrelDir = -1.0f;
+        }
+
+
+
+    }
 }

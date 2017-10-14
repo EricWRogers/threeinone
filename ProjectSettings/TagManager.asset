@@ -7,6 +7,9 @@ TagManager:
   - bSpawners
   - ground
   - barrel
+  - lader
+  - wallLeft
+  - wallRight
   layers:
   - Default
   - TransparentFX

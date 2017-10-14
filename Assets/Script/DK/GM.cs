@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GM : MonoBehaviour {
 	int lives = 3;
+    public GameObject player;
+    public GameObject playerSpawn;
 
 	//Enemy
 	public GameObject Enemy;
 	public int numOfEnemies;
+    public int deathCounter = -1;
+    public bool playerAlive = false;
+
 	//SpawnPoint
 	//public List<GameObject> Spawners = new List<GameObject>();
 	public GameObject[] eSpawners;
@@ -38,14 +43,17 @@ public class GM : MonoBehaviour {
 
         void FixedUpdate()
 	{
-		
+		if(playerAlive==false)
+        {
+            Instantiate(player, playerSpawn.transform.position, playerSpawn.transform.rotation);
+            deathCounter++;
+            playerAlive = true;
+        }
 	}
 
 	void AutoFindSpawns()
 	{
-		//Find All Spawners in level
-		//Spawners.AddRange(GameObject.FindGameObjectsWithTag("Spawners"));
-		//if (eSpawners == null)
+		
 		eSpawners = GameObject.FindGameObjectsWithTag("bSpawners");
 
 	}
