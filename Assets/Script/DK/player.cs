@@ -3,34 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour {
-	public float speed;
-
-	public Rigidbody2D rb2d;
-
-	// Use this for initialization
-	void Start () {
-		
+	public float velo;
+	public float jumpForce;
+	private Rigidbody2D rb;
+	private bool IsGrounded;
+	float movehori;
+	void Start (){
+		rb = GetComponent<Rigidbody2D> ();
+		IsGrounded = true; 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-		
-	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
 	void FixedUpdate()
 	{
-		//Store the current horizontal input in the float moveHorizontal.
-		float moveHorizontal = Input.GetAxis ("Horizontal");
+		//move
+		//if (Input.GetAxis ("Horizontal") >= 1) {
+		//	float movehori = 1;
+		//}else if(Input.GetAxis ("Horizontal") <= 1) {
+		//	float movehori = -1;
+		//}
+		float movehori = Input.GetAxis ("Horizontal");
+		Vector2 movement = new Vector2 (movehori, 0.0f);
+		rb.velocity = rb.velocity + movement * velo;
 
-		//Store the current vertical input in the float moveVertical.
-		float moveVertical = Input.GetAxis ("Vertical");
+		//jump
+		if (IsGrounded==true){
+			if (Input.GetButtonDown ("Jump")) {
+				rb.AddForce (new Vector2 (0, jumpForce));
+			}
+		}if (IsGrounded==false){
+			if (Input.GetButtonDown ("Jump")) {
+				rb.AddForce (new Vector2 (0, 0));
+			}
+		}
+	}
 
-		//Use the two store floats to create a new Vector2 variable movement.
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-
-		//Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-		rb2d.AddForce (movement * speed);
+	void OnCollisionEnter(Collision other)
+	{
+		if(other.transform.tag == "ground")
+		{
+			IsGrounded = true;
+		}
 
 	}
 
