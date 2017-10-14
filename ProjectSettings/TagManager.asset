@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bSpawners
   - ground
+  - barrel
   layers:
   - Default
   - TransparentFX

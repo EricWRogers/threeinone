@@ -22,10 +22,10 @@ public class barrels : MonoBehaviour {
 	void FixedUpdate()
 	{
 		//Store the current horizontal input in the float moveHorizontal.
-		float moveHorizontal = 1.0f;
+		float moveHorizontal = 0.0f;
 
 		//Store the current vertical input in the float moveVertical.
-		float moveVertical = Input.GetAxis ("Vertical");
+		float moveVertical = 1.0f;
 
 		//Use the two store floats to create a new Vector2 variable movement.
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);

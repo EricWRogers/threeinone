@@ -15,16 +15,30 @@ public class GM : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		AutoFindSpawns();
-		//SpawnEnemy();
-	}
+        //SpawnEnemy();
 
+        //starting wait coroutine
+        StartCoroutine(MyCoroutine());
 
-	void FixedUpdate()
+        //MyCoroutine();
+
+        
+    }
+
+    IEnumerator MyCoroutine()
+    {
+        for (int i = 0; i <= 30; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(3);
+
+        }
+        
+    }
+
+        void FixedUpdate()
 	{
-		if(numOfEnemies <= 0)
-		{
-			SpawnEnemy();
-		}
+		
 	}
 
 	void AutoFindSpawns()

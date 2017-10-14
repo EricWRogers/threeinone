@@ -42,13 +42,21 @@ public class player : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnCollisionEnter2D(Collision2D other)
 	{
-		if(other.transform.tag == "ground")
+        Debug.Log(other.gameObject.tag);
+        if (other.transform.tag == "ground")
 		{
 			IsGrounded = true;
 		}
+        
+        if(other.gameObject.tag == "barrel")
+        {
+            Destroy(other.collider.gameObject);
+            //Destroy(gameObject);
+        }
 
 	}
+
 
 }
