@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GM : MonoBehaviour {
+	int lives = 3;
 
 	// Use this for initialization
 	void Start () {
