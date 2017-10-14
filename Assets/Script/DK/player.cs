@@ -5,7 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour {
 	public float speed;
 	public float jumpForce;
-	private Rigidbody2D rb;
+	private Rigidbody rb;
 	private bool IsGrounded;
     private bool CanClimb;
 	private float movehori;
@@ -20,7 +20,7 @@ public class player : MonoBehaviour {
 
 
     void Start (){
-		rb = GetComponent<Rigidbody2D> ();
+		rb = GetComponent<Rigidbody> ();
 		IsGrounded = true; 
 	}
     private void Awake()
@@ -100,7 +100,7 @@ public class player : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnCollisionEnter(Collision other)
 	{
         Debug.Log(other.gameObject.tag);
         if (other.transform.tag == "ground")
