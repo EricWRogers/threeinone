@@ -10,6 +10,9 @@ public class player : MonoBehaviour {
     private bool CanClimb;
 	private float movehori;
     public GM gameloop;
+    private int cout;
+    private bool isClimbing = false;
+    private bool beatLevel2 = true;
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -66,18 +69,34 @@ public class player : MonoBehaviour {
 
 		//jump
 		if (IsGrounded==true){
-			if (Input.GetButtonDown ("Jump")) {
-                posy.y += jumpForce * speed;
-                transform.localPosition = posy;
+			//if (Input.GetButtonDown ("Jump")) {
+            //    posy.y += jumpForce * speed;
+            //    transform.localPosition = posy;
+            //    IsGrounded = false;
+			//}
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.velocity = new Vector3(0, 5, 0);
                 IsGrounded = false;
-			}
-		}if (CanClimb==true){
-			if (Input.GetButtonDown ("Climb")) {
-                posy.y += 15.0f * speed;
-                transform.localPosition = posy;
-                CanClimb = false;
-			}
+            }
+            
 		}
+        if (Input.GetButtonDown("Climb"))
+        {
+            isClimbing = true;
+        }
+        if (Input.GetButtonUp("Climb"))
+        {
+            isClimbing = false;
+        }
+		if(CanClimb==true && isClimbing==true)
+        {
+            rb.velocity = new Vector3(0, 5, 0);
+            //CanClimb = false;
+            //if (cout > 1000)
+            //    break;
+            //cout++;
+        }
 
 	}
 
@@ -105,6 +124,15 @@ public class player : MonoBehaviour {
         if (collision.gameObject.tag == "lader")
         {
             CanClimb = true;
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "lader")
+        {
+            CanClimb = false;
 
         }
     }

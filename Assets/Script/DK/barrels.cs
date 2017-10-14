@@ -7,15 +7,16 @@ public class barrels : MonoBehaviour {
 	public float speed;
     private float barrelDir = 1.0f;
 	public Rigidbody2D rb2d;
+    private bool beatLevel2 = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-        StartCoroutine(MyCoroutine());
+        //StartCoroutine(MyCoroutine());
     }
 
 
@@ -54,5 +55,19 @@ public class barrels : MonoBehaviour {
 
 
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "KillBill")
+        {
+            Destroy(gameObject);
+
+        }
+        if(collision.gameObject.tag == "bullet")
+        {
+            //Destroy(collisio.collider.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

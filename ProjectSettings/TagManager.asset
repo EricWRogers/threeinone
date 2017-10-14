@@ -10,6 +10,7 @@ TagManager:
   - lader
   - wallLeft
   - wallRight
+  - KillBill
   layers:
   - Default
   - TransparentFX

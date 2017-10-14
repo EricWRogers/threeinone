@@ -17,7 +17,11 @@ public class bullet : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(MyCoroutine());
+        //StartCoroutine(MyCoroutine());
+
+        Vector2 posx = transform.localPosition;
+        posx.x += 5.0f * speed;
+        transform.localPosition = posx;
     }
 
 
@@ -35,9 +39,7 @@ public class bullet : MonoBehaviour {
     void FixedUpdate()
     {
 
-        Vector2 posx = transform.localPosition;
-        posx.x += 5.0f * speed;
-        transform.localPosition = posx;
+       
 
     }
 
