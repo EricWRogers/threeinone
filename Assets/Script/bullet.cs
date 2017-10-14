@@ -20,7 +20,7 @@ public class bullet : MonoBehaviour {
         //StartCoroutine(MyCoroutine());
 
         Vector2 posx = transform.localPosition;
-        posx.x += 5.0f * speed;
+        posx.y += 5.0f * speed;
         transform.localPosition = posx;
     }
 
