@@ -5,7 +5,7 @@ using UnityEngine;
 public class barrels : MonoBehaviour {
 
 	public float speed;
-    private float barrelDir = 1.0f;
+    private float barrelDir = -1.0f;
 	public Rigidbody2D rb2d;
     private bool beatLevel2 = false;
 
@@ -37,6 +37,7 @@ public class barrels : MonoBehaviour {
         Vector2 pos = transform.localPosition;
         pos.x += speed * barrelDir;
         transform.localPosition = pos;
+        Destroy(gameObject, 2.0f);
 
     }
 

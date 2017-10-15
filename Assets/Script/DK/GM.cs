@@ -64,9 +64,12 @@ public class GM : MonoBehaviour {
 
 		foreach (GameObject respawn in eSpawners)
 		{
-			Instantiate(Enemy, respawn.transform.position, respawn.transform.rotation);
+			var barrels = Instantiate(Enemy, respawn.transform.position, respawn.transform.rotation);
 			numOfEnemies++;
-		}
+            Destroy(barrels, 25.0f);
+        } 
+
+
 
 
 	}
