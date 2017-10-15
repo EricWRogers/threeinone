@@ -8,8 +8,13 @@ public class EnemyController : MonoBehaviour {
 
     Vector3 originalPos;
 
-	// Use this for initialization
-	void Start () {
+    public bool isRow1Enemy = false;
+    public bool isRow2Enemy = false;
+    public bool isRow3Enemy = false;
+
+
+    // Use this for initialization
+    void Start () {
         originalPos = transform.position;
 	}
 	
@@ -27,6 +32,20 @@ public class EnemyController : MonoBehaviour {
             gameObject.SetActive(false);
             collision.gameObject.SetActive(false);
             GameManager.killedEnemies++;
+
+            if(isRow1Enemy)
+            {
+                GameManager.firstRowEnemiesKilled++;
+                Debug.Log(GameManager.firstRowEnemiesKilled + "First Row Killed");
+            }
+            if (isRow2Enemy)
+            {
+                GameManager.secondRowEnemiesKilled++;
+            }
+            if (isRow3Enemy)
+            {
+                GameManager.thirdRowEnemiesKilled++;
+            }
         }
     }
 }

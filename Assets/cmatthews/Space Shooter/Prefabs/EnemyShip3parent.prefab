@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65339729930978662}
   m_Layer: 0
   m_Name: EnemyShip3parent
-  m_TagString: Untagged
+  m_TagString: Enemy3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,3 +1317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fad0eb2f1c1b1429817f8df4f261d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRow1Enemy: 0
+  isRow2Enemy: 0
+  isRow3Enemy: 1

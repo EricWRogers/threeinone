@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour {
     public static int firstRowEnemiesKilled = 0;
     public static int firstRowEnemies = 0;
 
+    public static int secondRowEnemiesKilled = 0;
     public static int secondRowEnemies = 0;
 
     public static int thirdRowEnemiesKilled = 0;
+    public static int thirdRowEnemies = 0;
 
     void Start () {
 
