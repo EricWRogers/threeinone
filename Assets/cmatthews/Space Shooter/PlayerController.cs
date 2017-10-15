@@ -43,7 +43,9 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log(shotCounter % 4);
+
+            Debug.Log("TODO: set up an object pool for the bullets so wee dont instantiate a million bullets");
+            //Debug.Log(shotCounter % 4);
 
             if(shotCounter % 4 == 0)
             {

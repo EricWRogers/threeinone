@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject prefab;
+    public GameObject prefab2;
+    public GameObject prefab3;
+    public GameObject prefab4;
+    public GameObject prefab5;
+    public GameObject prefab6;
+
     Camera c;
 
     public int rows = 5;
@@ -61,10 +67,31 @@ public class EnemySpawner : MonoBehaviour {
         {
             for (int col = 0; col < columns; col++)
             {
-                GameObject enemy = Instantiate(prefab);
-                enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
-                //do other stuff to brick
-                enemys.Add(enemy);
+                if (row == 0)
+                {
+                    GameObject enemy = Instantiate(prefab);
+                    enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
+                    //do other stuff to brick
+                    enemys.Add(enemy);
+                }
+
+                if (row == 1)
+                {
+                    GameObject enemy = Instantiate(prefab2);
+                    enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
+                    //do other stuff to brick
+                    enemys.Add(enemy);
+                }
+
+                if (row == 2)
+                {
+                    GameObject enemy = Instantiate(prefab3);
+                    enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
+                    //do other stuff to brick
+                    enemys.Add(enemy);
+                }
+
+
             }
         }
     }
