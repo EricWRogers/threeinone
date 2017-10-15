@@ -47,7 +47,9 @@ public class player : MonoBehaviour {
         Destroy(bullet, 2.0f);
     }
 
-    void FixedUpdate()
+   
+
+    void Update()
 	{
         //move
         //if (Input.GetAxis ("Horizontal") >= 1) {
