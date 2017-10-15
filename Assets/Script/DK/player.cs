@@ -125,6 +125,17 @@ public class player : MonoBehaviour {
             SceneManager.LoadScene("SpaceShootScene", LoadSceneMode.Single);
         }
 
+        if (other.gameObject.tag == "health")
+        {
+            if (other.gameObject.tag == "health")
+            {
+
+                damage--;
+                Destroy(other.collider.gameObject);
+
+            }
+        }
+
 
 
     }
@@ -140,6 +151,11 @@ public class player : MonoBehaviour {
         {
             SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
         }
+        if (collision.gameObject.tag == "out")
+        {
+            SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
+        }
+        
     }
 
     private void OnTriggerExit(Collider collision)
