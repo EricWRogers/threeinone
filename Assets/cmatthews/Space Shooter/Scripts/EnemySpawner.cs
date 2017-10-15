@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
     public float edgePadding = 0.1f;
     public float bottomPadding = 0.4f;
 
-    List<GameObject> enemys = new List<GameObject>();
+    public static List<GameObject> enemys = new List<GameObject>();
 
     private void Awake()
     {

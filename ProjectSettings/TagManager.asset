@@ -11,6 +11,8 @@ TagManager:
   - wallLeft
   - wallRight
   - KillBill
+  - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX
