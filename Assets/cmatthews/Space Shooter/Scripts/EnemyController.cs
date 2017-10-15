@@ -12,6 +12,16 @@ public class EnemyController : MonoBehaviour {
     public bool isRow2Enemy = false;
     public bool isRow3Enemy = false;
 
+    public Transform enemy1Gun1;
+    public Transform enemy1Gun2;
+
+    Transform enemy2Gun1;
+    Transform enemy2Gun2;
+
+    public GameObject bulletPrefab;
+
+    public float bulletForce = 100f;
+
 
     // Use this for initialization
     void Start () {
@@ -23,6 +33,21 @@ public class EnemyController : MonoBehaviour {
         timer += Time.deltaTime;
         float blah = timer % 3;
         transform.position = originalPos + new Vector3(Mathf.Sin(timer), 0, 0);
+
+        if (isRow1Enemy)
+        {
+            int yuck = Random.Range(0, 1000);
+            if (yuck == 1)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, enemy1Gun1.transform.position, Quaternion.identity);
+                bullet.GetComponent<Rigidbody>().AddForce(Vector3.down * bulletForce);
+            }
+            if (yuck == 2)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, enemy1Gun2.transform.position, Quaternion.identity);
+                bullet.GetComponent<Rigidbody>().AddForce(Vector3.down * bulletForce);
+            }
+        }
 	}
 
     private void OnCollisionEnter(Collision collision)

@@ -555,6 +555,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1533200617388034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4170424920438070}
+  m_Layer: 0
+  m_Name: Enemy1Gun2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1568200160573242
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +752,21 @@ GameObject:
   - component: {fileID: 23750915568014350}
   m_Layer: 0
   m_Name: Tube016
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1805767769414346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4587114731831356}
+  m_Layer: 0
+  m_Name: Enemy1Gun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,6 +1041,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4521891007945798}
   m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4170424920438070
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533200617388034}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: 64.18267, y: 711.36475, z: 13.006687}
+  m_LocalScale: {x: 250, y: 250, z: 250}
+  m_Children: []
+  m_Father: {fileID: 4521891007945798}
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4172512107822744
 Transform:
@@ -1305,7 +1348,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207285230597252}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -43.574745, y: -9.513116, z: 0}
+  m_LocalPosition: {x: -23.988028, y: 1.5477307, z: 0}
   m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
   m_Children:
   - {fileID: 4232131988356810}
@@ -1359,6 +1402,8 @@ Transform:
   - {fileID: 4172512107822744}
   - {fileID: 4110586929576644}
   - {fileID: 4249944638074938}
+  - {fileID: 4587114731831356}
+  - {fileID: 4170424920438070}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: 90}
@@ -1374,6 +1419,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4521891007945798}
   m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4587114731831356
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805767769414346}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: 64.18267, y: 711.36475, z: -13.993263}
+  m_LocalScale: {x: 250, y: 250, z: 250}
+  m_Children: []
+  m_Father: {fileID: 4521891007945798}
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4602543429714152
 Transform:
@@ -3739,3 +3797,8 @@ MonoBehaviour:
   isRow1Enemy: 1
   isRow2Enemy: 0
   isRow3Enemy: 0
+  enemy1Gun1: {fileID: 4587114731831356}
+  enemy1Gun2: {fileID: 4170424920438070}
+  bulletPrefab: {fileID: 1459721116830994, guid: 9ed9d760129704345bf541a2881fb2f7,
+    type: 2}
+  bulletForce: 100
