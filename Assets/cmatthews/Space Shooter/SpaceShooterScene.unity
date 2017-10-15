@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  tilt: 10
+  tilt: 50
   gun1: {fileID: 312150808}
   gun2: {fileID: 1148449536}
   gun3: {fileID: 1203897412}
@@ -389,6 +389,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1207285230597252, guid: f8e8519e1af7c2d41989343367c2a4dc, type: 2}
+  prefab2: {fileID: 1784314255600542, guid: a88b020aff9084b418da51515714739b, type: 2}
+  prefab3: {fileID: 1128633250711648, guid: dd9a65850721dd740acbaaed2cf0036c, type: 2}
+  prefab4: {fileID: 0}
+  prefab5: {fileID: 0}
+  prefab6: {fileID: 0}
   rows: 3
   columns: 10
   edgePadding: 0.06
