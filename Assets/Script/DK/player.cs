@@ -9,6 +9,7 @@ public class player : MonoBehaviour {
 	private bool IsGrounded;
     private bool CanClimb;
 	private float movehori;
+    private int damage = 0;
     public GM gameloop;
     private int cout;
     private bool isClimbing = false;
@@ -110,9 +111,18 @@ public class player : MonoBehaviour {
         
         if(other.gameObject.tag == "barrel")
         {
+            damage++;
             //Destroy(other.collider.gameObject);
-            gameloop.playerAlive = false;
-            Destroy(gameObject);
+            if (damage == 2)
+            {
+                gameloop.playerAlive = false;
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(other.collider.gameObject);
+            }
+            
         }
 
         
