@@ -75,6 +75,7 @@ public class player : MonoBehaviour {
             if (Input.GetButtonDown("Jump"))
             {
                 rb.velocity = new Vector3(0, 5, 0);
+                //SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
                 IsGrounded = false;
             }
             
@@ -90,10 +91,6 @@ public class player : MonoBehaviour {
 		if(CanClimb==true && isClimbing==true)
         {
             rb.velocity = new Vector3(0, 5, 0);
-            //CanClimb = false;
-            //if (cout > 1000)
-            //    break;
-            //cout++;
         }
 
 	}
@@ -141,7 +138,7 @@ public class player : MonoBehaviour {
         }
         if(collision.gameObject.tag == "out")
         {
-            SceneManager.LoadScene("SpaceShootScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
         }
     }
 
