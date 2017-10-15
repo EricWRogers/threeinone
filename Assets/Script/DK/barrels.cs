@@ -37,7 +37,6 @@ public class barrels : MonoBehaviour {
         Vector2 pos = transform.localPosition;
         pos.x += speed * barrelDir;
         transform.localPosition = pos;
-        Destroy(gameObject, 2.0f);
 
     }
 
