@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     // Use this for initialization
-    public static int enemies;
+    public static int enemies = 0;
+
+    public static int killedEnemies = 0;
+
+    public static int firstRowEnemiesKilled = 0;
+    public static int firstRowEnemies = 0;
+
+    public static int secondRowEnemies = 0;
+
+    public static int thirdRowEnemiesKilled = 0;
 
     void Start () {
 
@@ -15,7 +25,7 @@ public class GameManager : MonoBehaviour {
             instance = this;
         }
 
-        enemies = EnemySpawner.enemys.Count;
+        
 
         Debug.Log(enemies);
 
@@ -24,6 +34,10 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(killedEnemies == enemies)
+        {
+            //Game Over!!! you win!
+            SceneManager.LoadScene(3);
+        }
 	}
 }

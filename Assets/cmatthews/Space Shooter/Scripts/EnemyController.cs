@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour {
         {
             gameObject.SetActive(false);
             collision.gameObject.SetActive(false);
+            GameManager.killedEnemies++;
         }
     }
 }

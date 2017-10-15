@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour {
     private void Awake()
     {
         c = Camera.main;
+        CreateEnemys();
     }
 
     // Use this for initialization
@@ -40,7 +41,7 @@ public class EnemySpawner : MonoBehaviour {
 
         //Instantiate(prefab, blah, Quaternion.identity);
 
-        CreateEnemys();
+        
 
 
 
@@ -73,6 +74,8 @@ public class EnemySpawner : MonoBehaviour {
                     enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
                     //do other stuff to brick
                     enemys.Add(enemy);
+
+                    GameManager.enemies++;
                 }
 
                 if (row == 1)
@@ -81,6 +84,7 @@ public class EnemySpawner : MonoBehaviour {
                     enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
                     //do other stuff to brick
                     enemys.Add(enemy);
+                    GameManager.enemies++;
                 }
 
                 if (row == 2)
@@ -89,6 +93,7 @@ public class EnemySpawner : MonoBehaviour {
                     enemy.transform.position = bottomLeft + new Vector3((col + .5f) * w, (row + .5f) * h, 0);
                     //do other stuff to brick
                     enemys.Add(enemy);
+                    GameManager.enemies++;
                 }
 
 
