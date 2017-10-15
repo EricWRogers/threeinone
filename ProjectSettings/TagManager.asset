@@ -11,6 +11,7 @@ TagManager:
   - wallLeft
   - wallRight
   - KillBill
+  - out
   - Enemy
   - bullet
   layers:

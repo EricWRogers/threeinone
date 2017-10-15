@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
 	public float speed;
@@ -11,6 +12,7 @@ public class player : MonoBehaviour {
 	private float movehori;
     private int damage = 0;
     public GM gameloop;
+    public CompleteCameraController CCC;
     private int cout;
     private bool isClimbing = false;
     private bool beatLevel2 = true;
@@ -27,15 +29,10 @@ public class player : MonoBehaviour {
     private void Awake()
     {
         gameloop = GameObject.Find("GM").GetComponent<GM>();
+        CCC = GameObject.Find("MainCamera").GetComponent<CompleteCameraController>();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Fire();
-        }
-    }
+
 
     void Fire()
     {
@@ -116,6 +113,7 @@ public class player : MonoBehaviour {
             if (damage == 2)
             {
                 gameloop.playerAlive = false;
+                CCC.playerDead = true;
                 Destroy(gameObject);
             }
             else
@@ -125,9 +123,14 @@ public class player : MonoBehaviour {
             
         }
 
-        
+        if (other.gameObject.tag == "out")
+        {
+            SceneManager.LoadScene("SpaceShootScene", LoadSceneMode.Single);
+        }
 
-	}
+
+
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -135,6 +138,10 @@ public class player : MonoBehaviour {
         {
             CanClimb = true;
 
+        }
+        if(collision.gameObject.tag == "out")
+        {
+            SceneManager.LoadScene("SpaceShootScene", LoadSceneMode.Single);
         }
     }
 

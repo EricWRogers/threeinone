@@ -6,7 +6,7 @@ public class barrels : MonoBehaviour {
 
 	public float speed;
     private float barrelDir = -1.0f;
-	public Rigidbody2D rb2d;
+	public Rigidbody rb2d;
     private bool beatLevel2 = false;
 
     // Use this for initialization
@@ -40,7 +40,7 @@ public class barrels : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter(Collision other)
     {
         Debug.Log(other.gameObject.tag);
         if (other.transform.tag == "wallLeft")

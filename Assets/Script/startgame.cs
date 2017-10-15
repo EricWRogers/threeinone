@@ -6,7 +6,7 @@ public class startgame : MonoBehaviour {
 
 	public void StartButton()
     {
-        SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("ThisIsMyFinalForm", LoadSceneMode.Single);
     }
 
     public void CreditsButton()
