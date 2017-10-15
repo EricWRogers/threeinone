@@ -6,6 +6,21 @@ public class startgame : MonoBehaviour {
 
 	public void StartButton()
     {
-        SceneManager.LoadScene("ThisIsMyFinalForm", LoadSceneMode.Single);
+        SceneManager.LoadScene("SpaceShooterScene", LoadSceneMode.Single);
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
+    void Update()
+    {
+        
     }
 }
