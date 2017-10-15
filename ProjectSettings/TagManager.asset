@@ -14,6 +14,7 @@ TagManager:
   - out
   - Enemy
   - bullet
+  - health
   layers:
   - Default
   - TransparentFX
