@@ -274,9 +274,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4521891007945798}
+  - component: {fileID: 65509229125180736}
+  - component: {fileID: 114607028713119860}
   m_Layer: 0
   m_Name: EnemyShip1 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,7 +1305,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207285230597252}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -43.574745, y: -9.513116, z: 0}
   m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
   m_Children:
   - {fileID: 4232131988356810}
@@ -3711,3 +3713,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200937968673790}
   m_Mesh: {fileID: 4300178, guid: fbc935f77cbf27941a74069271cc96d4, type: 3}
+--- !u!65 &65509229125180736
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207285230597252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 218.14, y: 71.11, z: 205.22}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114607028713119860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207285230597252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fad0eb2f1c1b1429817f8df4f261d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
