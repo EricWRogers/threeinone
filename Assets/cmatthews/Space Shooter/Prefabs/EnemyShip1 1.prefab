@@ -3799,6 +3799,6 @@ MonoBehaviour:
   isRow3Enemy: 0
   enemy1Gun1: {fileID: 4587114731831356}
   enemy1Gun2: {fileID: 4170424920438070}
-  bulletPrefab: {fileID: 1459721116830994, guid: 9ed9d760129704345bf541a2881fb2f7,
+  bulletPrefab: {fileID: 1459721116830994, guid: 8b9d60f2934d26743a37cd20108f15ca,
     type: 2}
   bulletForce: 100

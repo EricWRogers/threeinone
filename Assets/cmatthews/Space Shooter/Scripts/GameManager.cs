@@ -41,5 +41,10 @@ public class GameManager : MonoBehaviour {
             //Game Over!!! you win!
             SceneManager.LoadScene(3);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
 	}
 }

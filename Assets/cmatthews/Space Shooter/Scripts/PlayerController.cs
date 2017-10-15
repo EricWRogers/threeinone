@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -19,8 +20,10 @@ public class PlayerController : MonoBehaviour {
     public float bulletForce = 100f;
 
     int shotCounter;
-    
 
+    bool dead = false;
+
+    float deathTimer = 0;
 
     private void Awake()
     {
@@ -35,6 +38,16 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (dead)
+        {
+            deathTimer += Time.deltaTime;
+            if (deathTimer == 4)
+            {
+                SceneManager.LoadScene(3);
+            }
+        }
+
+
         float x = Input.GetAxis("Horizontal");
 
         transform.position += Vector3.right * x * Time.deltaTime * speed;
@@ -71,4 +84,14 @@ public class PlayerController : MonoBehaviour {
             shotCounter++;
         }
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "EnemyBullet")
+        {
+            //You Lose
+            gameObject.SetActive(false);
+            dead = true;
+        }
+    }
 }
