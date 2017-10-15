@@ -80,6 +80,10 @@ public class player : MonoBehaviour {
             }
             
 		}
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        }
         if (Input.GetButtonDown("Climb"))
         {
             isClimbing = true;
