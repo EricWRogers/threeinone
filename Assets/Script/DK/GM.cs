@@ -32,7 +32,7 @@ public class GM : MonoBehaviour {
 
     IEnumerator MyCoroutine()
     {
-        for (int i = 0; i <= 30; i++)
+        for (int i = 0; i <= 100; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(3);
